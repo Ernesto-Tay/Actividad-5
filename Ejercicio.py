@@ -6,7 +6,7 @@ while True:
         case "1":
             while True:
                 try:
-                    cant = int(input("Ingrese la cantidad de ventas que desea ingresar: "))
+                    cant = int(input("\nIngrese la cantidad de ventas que desea ingresar: "))
                     if cant<=0:
                         print("El valor debe ser positivo")
                     else:
@@ -17,7 +17,7 @@ while True:
             for i in range(cant):
                 while True:
                     try:
-                        sale = int(input(f"Venta ingresada {i}:"))
+                        sale = int(input(f"Venta a ingresar {i+1}: "))
                         if sale<=0:
                             print("El valor debe ser positivo")
                         ventas.append(sale)
@@ -29,8 +29,10 @@ while True:
             if not ventas:
                 print("No hay ventas")
             else:
+                cont = 1
                 for i in ventas:
-                    print(f"Venta {i+1}: {ventas[i]}")
+                    print(f"Venta {cont}: Q{i}")
+                    cont += 1
 
         case "3":
             if not ventas:
@@ -50,7 +52,7 @@ while True:
                     ammount += 1
                     total += i
                 average = total / ammount
-                print("El promedio de ventas es de Q" + round(average,2))
+                print("El promedio de ventas es de Q" + str(round(average,2)))
 
 
         case "5":
@@ -81,15 +83,15 @@ while True:
 
                 print("\nVentas altas:")
                 for i in high:
-                    print("Q"+i)
+                    print("Q"+str(i))
 
                 print("\nVentas medias:")
                 for i in mid:
-                    print("Q"+i)
+                    print("Q"+str(i))
 
                 print("\nVentas bajas:")
                 for i in low:
-                    print("Q"+i)
+                    print("Q"+str(i))
 
         case "7":
             print("Saliendo del sistema...")
